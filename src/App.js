@@ -11,19 +11,19 @@ import {
 function App() {
   return (
     <div className="App">
+      <Header />
       <BrowserRouter>
-        <Header />
         <Switch>
           {/* <Route exact path="/">
             <Header />
           </Route> */}
-          <Route path="/">
+          <Route exact path="/">
             <ProductListing />
           </Route>
           <Route path="/product/:productId">
             <ProductDetail />
           </Route>
-          <Route>
+          <Route exact>
             <h1>404 Not Found!</h1>
           </Route>
         </Switch>
@@ -33,3 +33,6 @@ function App() {
 }
 
 export default App;
+
+
+
