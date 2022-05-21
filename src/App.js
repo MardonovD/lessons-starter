@@ -1,4 +1,4 @@
-import Header from "./components/Header";
+import Header from "./containers/Header";
 import {
   BrowserRouter,
   Switch,
@@ -7,7 +7,7 @@ import {
   useRouteMatch,
 } from "react-router-dom";
 
-import Main from "./components/Main";
+import Main from "./containers/Main";
 function App() {
   return (
     <BrowserRouter>
