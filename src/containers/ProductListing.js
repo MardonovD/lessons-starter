@@ -22,7 +22,7 @@ const ProductListing = () => {
   console.log("Products", products);
 
   return (
-    <div className="ui  grid container">
+    <div className="ui  grid container d-flex justify-content-between">
       <ProductComponent />
     </div>
   );
