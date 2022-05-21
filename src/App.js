@@ -1,32 +1,19 @@
 import ProductListing from "./containers/ProductListing.js";
 import ProductDetail from "./containers/ProductDetail.js";
 import Header from "./containers/Header.js";
-import {
-  BrowserRouter,
-  Switch,
-  Route,
-  Link,
-  useRouteMatch,
-} from "react-router-dom";
+
+import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 function App() {
   return (
     <div className="App">
       <Header />
       <BrowserRouter>
-        <Switch>
-          {/* <Route exact path="/">
-            <Header />
-          </Route> */}
-          <Route exact path="/">
-            <ProductListing />
+        <Routes>
+          <Route path="/" element={<ProductListing />} />
+          <Route path="/product/:productId" element={<ProductDetail />}>
+            {/* <Route path=":id" element={<UserProfile />} /> */}
           </Route>
-          <Route path="/product/:productId">
-            <ProductDetail />
-          </Route>
-          <Route exact>
-            <h1>404 Not Found!</h1>
-          </Route>
-        </Switch>
+        </Routes>
       </BrowserRouter>
     </div>
   );
@@ -34,5 +21,22 @@ function App() {
 
 export default App;
 
-
-
+// <div className="App">
+// <Header />
+// <BrowserRouter>
+//   <Switch>
+//     {/* <Route exact path="/">
+//       <Header />
+//     </Route> */}
+//     <Route exact path={`${match.path}/`}>
+//       <ProductListing />
+//     </Route>
+//     <Route path={`${match.path}/product/:productId`}>
+//       <ProductDetail />
+//     </Route>
+//     <Route exact>
+//       <h1>404 Not Found!</h1>
+//     </Route>
+//   </Switch>
+// </BrowserRouter>
+// </div>
